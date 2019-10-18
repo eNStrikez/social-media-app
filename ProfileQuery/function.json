@@ -1,9 +1,13 @@
 {
-  "name": "documents",
-  "type": "cosmosDB",
-  "direction": "in",
-  "databaseName": "Social",
-  "collectionName": "Profiles",
-  "sqlQuery": "SELECT * from c",
-  "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB"
+  	"bindings": [
+		{
+		"name": "documents",
+		"type": "cosmosDB",
+		"direction": "in",
+		"databaseName": "Social",
+		"collectionName": "Profiles",
+		"sqlQuery": "SELECT * from c",
+		"connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB"
+		}
+  	]
 }
