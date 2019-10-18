@@ -5,7 +5,7 @@
       "name": "documents",
       "direction": "in",
       "leaseCollectionName": "leases",
-      "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
+      "connectionStringSetting": "CosmosDBConnection",
       "databaseName": "Social",
       "collectionName": "Posts",
       "createLeaseCollectionIfNotExists": "true"
