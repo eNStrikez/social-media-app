@@ -1,0 +1,14 @@
+{
+  "bindings": [
+    {
+      "type": "cosmosDBTrigger",
+      "name": "documents",
+      "direction": "in",
+      "leaseCollectionName": "leases",
+      "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
+      "databaseName": "Social",
+      "collectionName": "Posts",
+      "createLeaseCollectionIfNotExists": "true"
+    }
+  ]
+}
