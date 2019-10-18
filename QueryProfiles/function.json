@@ -1,0 +1,29 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "profile",
+      "databaseName": "Social",
+      "collectionName": "Profiles",
+      "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
+      "direction": "in",
+      "query": "SELECT * from c"
+    }
+  ],
+  "disabled": false
+}
