@@ -2,11 +2,16 @@ module.exports = function (context, req, profiles) {
     context.log('Searching for profiles...');
     if (!profiles)
     {
-        context.log("No profiles found");
+        context.res = {
+            status:404,
+            body: "No matching profile found"
+        };
     }
     else
     {
-        context.log(profiles);
+        context.res = {
+            body: profiles
+        };
     }
 
     context.done();
