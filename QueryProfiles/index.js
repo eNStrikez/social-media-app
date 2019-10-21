@@ -9,10 +9,11 @@ module.exports = function (context, req, profiles) {
     }
     else
     {
+        context.log('Responding with found profiles...');
         context.res = {
             body: profiles
         };
     }
-
+    context.log('Returning context');
     context.done();
 };
