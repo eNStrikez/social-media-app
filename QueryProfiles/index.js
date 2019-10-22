@@ -11,7 +11,7 @@ module.exports = function (context, req, profiles) {
     {
         context.log('Responding with found profiles...');
         context.res = {
-            body: profiles
+            body: context.bindings.profiles
         };
     }
     context.log('Returning context');
