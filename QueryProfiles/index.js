@@ -12,8 +12,7 @@ module.exports = function (context, req, profiles) {
         context.log('Responding with found profiles...');
         res = {
             status: 200,
-            body: "Found profiles",
-            profiles: profiles
+            body: profiles
         };
         context.log(res);
     }
