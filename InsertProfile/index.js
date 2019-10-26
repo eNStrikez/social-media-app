@@ -1,5 +1,5 @@
 module.exports = function (context, req) {
-    context.log(req.body);
+    context.log(req.body.tag);
     context.bindings.profileDocument = JSON.stringify({
         id: req.body.tag,
         name: req.body.name,
