@@ -13,11 +13,11 @@
     },
     {
       "type": "cosmosDB",
-      "name": "profiles",
+      "name": "documentsToStore",
       "databaseName": "Social",
       "collectionName": "Profiles",
       "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
-      "direction": "in",
+      "direction": "out",
       "createIfNotExists": false
     }
   ]
