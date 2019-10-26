@@ -1,5 +1,5 @@
 module.exports = function (context, req, profile) {
-    if (!profiles)
+    if (!profile)
     {
         context.log('No profile found to edit')
         context.res = {
