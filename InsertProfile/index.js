@@ -6,7 +6,8 @@ module.exports = function (context, req) {
         password: req.body.password,
         icon: "null",
         followers: [],
-        following: []
+        following: [],
+        email: req.body.email
     });
 
     context.done(null, {
