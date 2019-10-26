@@ -14,7 +14,6 @@ module.exports = function (context, req, profiles) {
             status: 200,
             body: profiles
         };
-        //context.log(res);
     }
     context.log('Returning context');
     context.done();
