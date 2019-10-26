@@ -1,0 +1,24 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "name": "classes",
+      "type": "httpTrigger",
+      "direction": "in"
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "profiles",
+      "databaseName": "Social",
+      "collectionName": "Profiles",
+      "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
+      "direction": "in",
+      "createIfNotExists": false
+    }
+  ]
+}
