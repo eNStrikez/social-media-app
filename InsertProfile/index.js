@@ -1,5 +1,5 @@
 module.exports = function (context) {
-
+    context.log(context.bindings);
     context.bindings.profileDocument = JSON.stringify({
         name: context.bindings.name,
         password: context.bindings.password,
