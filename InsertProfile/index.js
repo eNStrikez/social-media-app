@@ -1,10 +1,10 @@
 module.exports = function (context, req) {
-    context.log(req.body.data.tag);
+    context.log(req.body.tag);
     context.bindings.profileDocument = JSON.stringify({
-        id: req.body.data.tag,
-        name: req.body.data.name,
-        password: req.body.data.password,
-        tag: req.body.data.tag,
+        //id: req.body.tag,
+        name: req.body.name,
+        password: req.body.password,
+        tag: req.body.tag,
         icon: "null",
         followers: [],
         following: []
