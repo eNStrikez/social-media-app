@@ -1,9 +1,9 @@
 module.exports = function (context) {
     context.log(context.bindings);
     context.bindings.profileDocument = JSON.stringify({
-        name: context.bindings.name,
-        password: context.bindings.password,
-        tag: context.bindings.tag,
+        name: context.bindings.body.name,
+        password: context.bindings.body.password,
+        tag: context.bindings.body.tag,
         icon: "null",
         followers: [],
         following: []
