@@ -2,7 +2,7 @@ module.exports = function (context, req, profiles) {
     context.log('Searching for profiles...');
     if (!profiles)
     {
-        res = {
+        context.res = {
             status:404,
             body: "No matching profile found"
         };
@@ -10,12 +10,12 @@ module.exports = function (context, req, profiles) {
     else
     {
         context.log('Responding with found profiles...');
-        res = {
+        context.res = {
             status: 200,
             body: profiles
         };
         context.log(res);
     }
     context.log('Returning context');
-    context.done(null, profiles);
+    context.done();
 };
