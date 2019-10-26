@@ -1,9 +1,9 @@
 module.exports = function (context) {
 
     context.bindings.employeeDocument = JSON.stringify({
-        name: context.bindings.myQueueItem.name,
-        password: context.bindings.myQueueItem.password,
-        tag: context.bindings.myQueueItem.tag,
+        name: context.bindings.name,
+        password: context.bindings.password,
+        tag: context.bindings.tag,
         icon: "null",
         followers: [],
         following: []
