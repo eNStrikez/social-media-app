@@ -16,15 +16,6 @@
       "direction": "out"
     },
     {
-      "type": "cosmosDB",
-      "name": "updatedProfile",
-      "databaseName": "Social",
-      "collectionName": "Profiles",
-      "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
-      "direction": "in",
-      "id": "{Tag}"
-    },
-    {
       "name": "profileToUpdate",
       "type": "cosmosDB",
       "databaseName": "Social",
@@ -32,7 +23,7 @@
       "createIfNotExists": false,
       "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
       "direction": "out",
-      "id": "{Tag}"
+      "id": "{tag}"
   }
   ],
   "disabled": false

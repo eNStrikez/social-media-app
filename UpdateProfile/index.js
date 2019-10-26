@@ -1,4 +1,4 @@
-module.exports = function (context, req, profileToUpdate, updatedProfile) {
+module.exports = function (context, req, profileToUpdate) {
     context.log('Searching for profiles...');
     if (!profileToUpdate)
     {
@@ -10,7 +10,14 @@ module.exports = function (context, req, profileToUpdate, updatedProfile) {
     else
     {
         context.log('Editing found profile');
-        profileToUpdate = updatedProfile;
+        profileToUpdate = JSON.stringify({
+            id: req.body.tag,
+            name: req.body.name,
+            password: req.body.password,
+            icon: "null",
+            followers: [],
+            following: []
+        });
         context.res = {
             status: 200,
             body: "Updated profile"
