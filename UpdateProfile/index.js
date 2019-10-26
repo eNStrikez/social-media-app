@@ -1,6 +1,6 @@
-module.exports = function (context, req, profileToUpdate) {
+module.exports = function (context, req) {
     context.log('Editing found profile');
-    profileToUpdate = JSON.stringify({
+    context.bindings.profileToUpdate = JSON.stringify({
         id: req.body.tag,
         name: req.body.name,
         password: req.body.password,
