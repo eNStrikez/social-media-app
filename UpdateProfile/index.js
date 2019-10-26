@@ -14,9 +14,9 @@ module.exports = function (context, req, profileToUpdate) {
             id: req.body.tag,
             name: req.body.name,
             password: req.body.password,
-            icon: "null",
-            followers: [],
-            following: []
+            icon: req.body.icon,
+            followers: req.body.followers,
+            following: req.body.following
         });
         context.res = {
             status: 200,
