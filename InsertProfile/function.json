@@ -12,7 +12,7 @@
       "direction": "out"
     },
     {
-      "name": "ProfileDocument",
+      "name": "profileDocument",
       "type": "cosmosDB",
       "databaseName": "Social",
       "collectionName": "Profiles",

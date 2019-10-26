@@ -1,6 +1,6 @@
 module.exports = function (context) {
 
-    context.bindings.employeeDocument = JSON.stringify({
+    context.bindings.profileDocument = JSON.stringify({
         name: context.bindings.name,
         password: context.bindings.password,
         tag: context.bindings.tag,
