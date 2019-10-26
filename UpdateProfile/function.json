@@ -22,8 +22,7 @@
       "collectionName": "Profiles",
       "createIfNotExists": false,
       "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
-      "direction": "out",
-      "id": "{tag}"
+      "direction": "out"
   }
   ],
   "disabled": false
