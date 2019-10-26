@@ -30,6 +30,7 @@
       "databaseName": "Social",
       "collectionName": "Profiles",
       "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
+      "partitionKey": "/name",
       "direction": "in",
       "id": "{tag}"
     }
