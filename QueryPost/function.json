@@ -22,7 +22,10 @@
       "collectionName": "Posts",
       "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
       "direction": "in",
-      "query": "SELECT data from c where c.tag IN {following}"
+      "query": "SELECT data from c where c.tag IN @following.children",
+      "parameters": [
+        {"name": "@following", "value": "following"}
+      ]
     }
   ],
   "disabled": false
