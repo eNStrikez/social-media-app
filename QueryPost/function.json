@@ -24,7 +24,7 @@
       "direction": "in",
       "query": "SELECT * from c where c.tag NOT IN @following",
       "parameters": [
-        {"name": "@following", "value": "following"}
+        {"name": "@following", "value": "{following}"}
       ]
     }
   ],
