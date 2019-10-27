@@ -17,16 +17,12 @@
     },
     {
       "type": "cosmosDB",
-      "name": "profiles",
+      "name": "posts",
       "databaseName": "Social",
-      "collectionName": "Profiles",
+      "collectionName": "Posts",
       "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
       "direction": "in",
-      "query": "SELECT data from c where c.tag = @tag and c.password = @password",
-      "parameters": [
-        {"name": "@tag", "value": "{tag}"},
-        {"name": "@password", "value": "{password}"}
-      ]
+      "query": "SELECT data from c where c.tag IN {following}"
     }
   ],
   "disabled": false
