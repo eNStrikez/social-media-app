@@ -10,17 +10,23 @@ module.exports = function (context, req, profiles, profilesToUpdate) {
         for(profile in profiles){
             if (profile.id == req.body.follower) {
                 if (req.body.add){
+                    context.log("Added following");
                     profile.following.push(req.body.followed);
                 } else {
-                    profile.following.splice(profile.following.indexOf(req.body.followed), 1)
+                    context.log("Removed following");
+                    profile.following = profile.following.splice(profile.following.indexOf(req.body.followed), 1)
                 }
+                context.log("Pushing updated follower");
                 profilesToUpdate.push(profile);
             } else if (profile.id == req.body.followed) {
                 if (req.body.add){
+                    context.log("Added follower");
                     profile.followed.push(req.body.follower);
                 } else {
-                    profile.followed.splice(profile.followed.indexOf(req.body.follower), 1)
+                    context.log("Removed follower");
+                    profile.followed = profile.followed.splice(profile.followed.indexOf(req.body.follower), 1)
                 }
+                context.log("Pushing updated followed");
                 profilesToUpdate.push(profile);
             } 
         }
