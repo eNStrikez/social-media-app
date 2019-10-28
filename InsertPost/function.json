@@ -2,18 +2,27 @@
   "bindings": [
     {
       "authLevel": "anonymous",
+      "name": "req",
       "type": "httpTrigger",
       "direction": "in",
-      "name": "req",
       "methods": [
         "get",
         "post"
       ]
     },
     {
+      "name": "$return",
       "type": "http",
-      "direction": "out",
-      "name": "res"
-    }
+      "direction": "out"
+    },
+    {
+      "name": "postDocument",
+      "type": "cosmosDB",
+      "databaseName": "Social",
+      "collectionName": "Post",
+      "createIfNotExists": true,
+      "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
+      "direction": "out"
+  }
   ]
 }

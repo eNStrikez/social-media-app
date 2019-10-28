@@ -1,16 +1,25 @@
-module.exports = async function (context, req) {
-    context.log('JavaScript HTTP trigger function processed a request.');
+module.exports = function (context, req) {
+    let date = new Date();
 
-    if (req.query.name || (req.body && req.body.name)) {
-        context.res = {
-            // status: 200, /* Defaults to 200 */
-            body: "Hello " + (req.query.name || req.body.name)
-        };
-    }
-    else {
-        context.res = {
-            status: 400,
-            body: "Please pass a name on the query string or in the request body"
-        };
-    }
+    let seconds = date.getSeconds();
+    let mins = date.getMinutes();
+    let hours = date.getHours();
+
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear()
+
+    context.log(req.body.tag);
+    context.bindings.postDocument = JSON.stringify({
+        tag: req.body.tag,
+        timestamp: hours + ":" + mins + ":" + seconds,
+        date: day + "/" + month + "/" + year,
+        content: req.body.content,
+        media: req.body.media
+    });
+
+    context.done(null, {
+        status: 201,
+        body: "Successfully inserted profile"
+    });
 };
