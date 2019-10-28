@@ -1,6 +1,5 @@
 module.exports = function (context, req, posts) {
     context.log('Searching for profiles...');
-    context.log(req.body.following);
     if (posts == [])
     {
         context.res = {
