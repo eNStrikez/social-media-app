@@ -19,7 +19,7 @@
       "name": "postDocument",
       "type": "cosmosDB",
       "databaseName": "Social",
-      "collectionName": "Post",
+      "collectionName": "Posts",
       "createIfNotExists": true,
       "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
       "direction": "out",

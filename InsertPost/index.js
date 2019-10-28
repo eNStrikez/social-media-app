@@ -9,7 +9,6 @@ module.exports = function (context, req) {
     let month = date.getMonth() + 1;
     let year = date.getFullYear()
 
-    context.log(req.body.tag);
     context.bindings.postDocument = JSON.stringify({
         tag: req.body.tag,
         timestamp: hours + ":" + mins + ":" + seconds,
@@ -20,6 +19,6 @@ module.exports = function (context, req) {
 
     context.done(null, {
         status: 201,
-        body: "Successfully inserted profile"
+        body: "Successfully inserted post"
     });
 };
