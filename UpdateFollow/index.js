@@ -10,10 +10,10 @@ module.exports = function (context, req, profiles, profilesToUpdate) {
         for(profile in profiles){
             if (profile.id == req.body.follower) {
                 if (req.body.add){
-                    context.log("Added following");
+                    context.log("Added followed");
                     profile.following.push(req.body.followed);
                 } else {
-                    context.log("Removed following");
+                    context.log("Removed followed");
                     profile.following = profile.following.splice(profile.following.indexOf(req.body.followed), 1)
                 }
                 context.log("Pushing updated follower");
