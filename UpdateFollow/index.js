@@ -30,6 +30,11 @@ module.exports = function (context, req, profiles, profilesToUpdate) {
                 profilesToUpdate.push(profile);
             } 
         }
+
+        context.res = {
+            status: 200,
+            body: "Successfully updated"
+        }
     }
     context.log('Returning context');
     context.done();
