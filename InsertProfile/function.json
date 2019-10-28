@@ -22,7 +22,8 @@
       "collectionName": "Profiles",
       "createIfNotExists": true,
       "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
-      "direction": "out"
+      "direction": "out",
+      "partitionKey": "/name"
   }
   ]
 }
