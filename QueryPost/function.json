@@ -22,7 +22,7 @@
       "collectionName": "Posts",
       "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
       "direction": "in",
-      "sqlQuery": "SELECT * FROM c WHERE ARRAY_CONTAINS ({following}, c.tag, true)"
+      "sqlQuery": "SELECT * FROM c WHERE ARRAY_CONTAINS (['arsenal_fc', 'fpl_official'], c.tag, true)"
     }
   ],
   "disabled": false
