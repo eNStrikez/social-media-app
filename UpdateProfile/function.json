@@ -32,7 +32,7 @@
       "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
       "partitionKey": "/name",
       "direction": "in",
-      "query": "SELECT * FROM c WHERE c.id = {tag}"
+      "Id": "{tag}"
     }
   ],
   "disabled": false

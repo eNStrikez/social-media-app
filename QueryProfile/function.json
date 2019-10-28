@@ -22,7 +22,11 @@
       "collectionName": "Profiles",
       "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
       "direction": "in",
-      "sqlQuery": "SELECT * from c where c.id = {tag}"
+      "sqlQuery": "SELECT * from c where c.id = @id and c.password = @password",
+      "parameters": [
+        {"name": "@id", "value": "{tag}"},
+        {"name": "@password", "value": "{password}"}
+      ]
     }
   ],
   "disabled": false
