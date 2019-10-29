@@ -17,9 +17,7 @@ module.exports = function (context, req, profiles, profilesToUpdate) {
                 } else {
                     context.log("Removed followed");
                     profile.following = profile.following.splice(profile.following.indexOf(req.body.followed), 1)
-                }
-                context.log("Pushing updated follower");
-                profilesToUpdate.push(profile);
+                }    
             } else if (profile.id == req.body.followed) {
                 if (req.body.add){
                     context.log("Added follower");
@@ -28,9 +26,9 @@ module.exports = function (context, req, profiles, profilesToUpdate) {
                     context.log("Removed follower");
                     profile.followers = profile.followers.splice(profile.followers.indexOf(req.body.follower), 1)
                 }
-                context.log("Pushing updated followed");
-                profilesToUpdate.push(profile);
             } 
+            context.log("Pushing updated followed");
+            profilesToUpdate.push(JSON.stringify(profile));
         }
 
         context.res = {
