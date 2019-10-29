@@ -9,6 +9,8 @@ module.exports = function (context, req, profiles, profilesToUpdate) {
     } else {
         context.log(profiles);
         for(profile in profiles){
+            context.log(profile.id);
+            context.log(req.body.follower);
             if (profile.id == req.body.follower) {
                 if (req.body.add){
                     context.log("Added followed");
