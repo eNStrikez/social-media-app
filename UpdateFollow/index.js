@@ -8,7 +8,8 @@ module.exports = function (context, req, profiles, profilesToUpdate) {
         }
     } else {
         context.log(profiles);
-        for(var profile in profiles){
+        for(var i = 0; i < profiles.length; i++) {
+            var profile = profiles[i];
             context.log(profile.id);
             context.log(req.body.follower);
             if (profile.id == req.body.follower) {
