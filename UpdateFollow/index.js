@@ -8,27 +8,36 @@ module.exports = function (context, req, profiles, profilesToUpdate) {
         }
     } else {
         profilesToUpdate = [];
-        for(var i = 0; i < profiles.length; i++) {
-            var profile = profiles[i];
+        for(let i = 0; i < profiles.length; i++) {
+            let profile = profiles[i];
+            let updatedProfile = {
+                "name": profile.name,
+                "password": profile.password,
+                "id": profile.id,
+                "icon": profile.icon,
+                "email": profile.email,
+                "following": profile.following,
+                "followers": profile.followers
+            };
             if (profile.id == req.body.follower) {
                 if (req.body.add){
                     context.log("Added followed");
-                    profile.following.push(req.body.followed);
+                    updatedProfile.following.push(req.body.followed);
                 } else {
                     context.log("Removed followed");
-                    profile.following = profile.following.splice(profile.following.indexOf(req.body.followed), 1)
+                    updatedProfile.following = updatedProfile.following.splice(updatedProfile.following.indexOf(req.body.followed), 1)
                 }    
             } else if (profile.id == req.body.followed) {
                 if (req.body.add){
                     context.log("Added follower");
-                    profile.followers.push(req.body.follower);
+                    updatedProfile.followers.push(req.body.follower);
                 } else {
                     context.log("Removed follower");
-                    profile.followers = profile.followers.splice(profile.followers.indexOf(req.body.follower), 1)
+                    updatedProfile.followers = updatedProfile.followers.splice(updatedProfile.followers.indexOf(req.body.follower), 1)
                 }
             } 
             context.log("Pushing updated followed");
-            profilesToUpdate.push(JSON.stringify(profile));
+            profilesToUpdate.push(JSON.stringify(updatedProfile));
         }
 
         context.res = {
