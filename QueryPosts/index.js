@@ -1,4 +1,4 @@
-module.exports = function (context, posts) {
+module.exports = function (context, req, posts) {
     context.log('Searching for posts...');
     if (!posts || posts == [])
     {
