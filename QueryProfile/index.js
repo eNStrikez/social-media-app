@@ -1,6 +1,6 @@
 module.exports = function (context, profile) {
     context.log('Searching for profile...');
-    if (!profiles)
+    if (!profile || profile == [])
     {
         context.res = {
             status:404,
@@ -12,7 +12,7 @@ module.exports = function (context, profile) {
         context.log('Responding with found profile...');
         context.res = {
             status: 200,
-            body: profiles
+            body: profile
         };
     }
     context.log('Returning context');
