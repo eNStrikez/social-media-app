@@ -1,6 +1,6 @@
-module.exports = function (context, profile) {
-    context.log('Searching for profile...');
-    if (!profile || profile == [])
+module.exports = function (context, req, profiles) {
+    context.log('Searching for profiles...');
+    if (!profiles || profiles == [])
     {
         context.res = {
             status:404,
@@ -9,10 +9,10 @@ module.exports = function (context, profile) {
     }
     else
     {
-        context.log('Responding with found profile...');
+        context.log('Responding with found profiles...');
         context.res = {
             status: 200,
-            body: profile
+            body: profiles
         };
     }
     context.log('Returning context');
