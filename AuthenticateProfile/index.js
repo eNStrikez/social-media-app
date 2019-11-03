@@ -1,5 +1,5 @@
-module.exports = function (context, profile) {
-    context.log('Searching for profile...');
+module.exports = function (context, req, profiles) {
+    context.log('Searching for profiles...');
     if (!profiles)
     {
         context.res = {
@@ -9,7 +9,7 @@ module.exports = function (context, profile) {
     }
     else
     {
-        context.log('Responding with found profile...');
+        context.log('Responding with found profiles...');
         context.res = {
             status: 200,
             body: profiles

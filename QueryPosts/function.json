@@ -17,12 +17,13 @@
     },
     {
       "type": "cosmosDB",
-      "name": "profile",
+      "name": "posts",
       "databaseName": "Social",
-      "collectionName": "Profiles",
+      "collectionName": "Posts",
       "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
+      "createIfNotExists": false,
       "direction": "in",
-      "sqlQuery": "SELECT c.name, c.icon, c.followers, c.following from c where c.id = {id}"
+      "sqlQuery": "SELECT * FROM c where c.tag = {tag} ORDER BY c._ts DESC"
     }
   ],
   "disabled": false
