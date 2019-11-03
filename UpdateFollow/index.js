@@ -37,6 +37,7 @@ module.exports = function (context, req, profiles, profilesToUpdate) {
                 }
             } 
             context.log("Pushing updated followed");
+            context.log(updatedProfile);
             profilesToUpdate.push(JSON.stringify(updatedProfile));
         }
 
