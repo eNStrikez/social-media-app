@@ -1,4 +1,7 @@
-module.exports = function (context, req, profiles, profilesToUpdate) {
+module.exports = function (context, req) {
+    let profiles = context.bindings.profiles;
+    
+    
     if (!profiles || profiles == [])
     {
         context.log('No profile found to edit')
@@ -7,38 +10,34 @@ module.exports = function (context, req, profiles, profilesToUpdate) {
             body: "Error finding profile"
         }
     } else {
-        profilesToUpdate = [];
+        context.bindings.profilesToUpdate = [];
         for(let i = 0; i < profiles.length; i++) {
-            let profile = profiles[i];
-            let updatedProfile = {
-                "name": profile.name,
-                "password": profile.password,
-                "id": profile.id,
-                "icon": profile.icon,
-                "email": profile.email,
-                "following": profile.following,
-                "followers": profile.followers
-            };
-            if (profile.id == req.body.follower) {
+            let updatedProfile = profiles[i];
+            // Current profile is follower or followed account
+            if (updatedProfile.id == req.body.follower) {
                 if (req.body.add){
+                    // Adds followed account to list of accounts follower is following
                     context.log("Added followed");
                     updatedProfile.following.push(req.body.followed);
                 } else {
+                    // Removes followed account from list of accounts follower is following
                     context.log("Removed followed");
-                    updatedProfile.following = updatedProfile.following.splice(updatedProfile.following.indexOf(req.body.followed), 1)
+                    updatedProfile.following.splice(updatedProfile.following.indexOf(req.body.followed), 1)
                 }    
-            } else if (profile.id == req.body.followed) {
+            } else if (updatedProfile.id == req.body.followed) {
                 if (req.body.add){
+                    // Adds follower to list of followers of followed
                     context.log("Added follower");
                     updatedProfile.followers.push(req.body.follower);
                 } else {
+                    // Removes follower from list of followers of followed
                     context.log("Removed follower");
-                    updatedProfile.followers = updatedProfile.followers.splice(updatedProfile.followers.indexOf(req.body.follower), 1)
+                    updatedProfile.followers.splice(updatedProfile.followers.indexOf(req.body.follower), 1)
                 }
             } 
             context.log("Pushing updated followed");
             context.log(updatedProfile);
-            profilesToUpdate.push(JSON.stringify(updatedProfile));
+            context.bindings.profilesToUpdate.push(updatedProfile);
         }
 
         context.res = {
