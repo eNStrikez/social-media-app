@@ -21,7 +21,6 @@
       "databaseName": "Social",
       "collectionName": "Posts",
       "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
-      "createIfNotExists": false,
       "direction": "in",
       "sqlQuery": "SELECT * FROM c where c.tag = {tag} ORDER BY c._ts DESC"
     }
