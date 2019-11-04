@@ -22,7 +22,7 @@
       "collectionName": "Posts",
       "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
       "direction": "in",
-      "sqlQuery": "SELECT * FROM c "
+      "sqlQuery": "SELECT * FROM c WHERE c.tag IN {following} ORDER BY c._ts DESC"
     }
   ],
   "disabled": false
