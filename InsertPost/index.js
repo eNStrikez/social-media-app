@@ -20,8 +20,10 @@ module.exports = function (context, req) {
         tags: req.body.tags
     });
 
-    context.done(null, {
+    context.res = {
         status: 201,
         body: "Successfully inserted post"
-    });
+    };
+
+    context.done();
 };
