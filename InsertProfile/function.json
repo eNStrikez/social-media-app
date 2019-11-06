@@ -24,6 +24,15 @@
       "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
       "direction": "out",
       "partitionKey": "/name"
-  }
+    },
+    {
+      "type": "cosmosDB",
+      "name": "profiles",
+      "databaseName": "Social",
+      "collectionName": "Profiles",
+      "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
+      "direction": "in",
+      "sqlQuery": "SELECT * from c where c.id = {tag}"
+    }
   ]
 }
