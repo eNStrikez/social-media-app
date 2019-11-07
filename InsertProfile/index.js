@@ -1,4 +1,4 @@
-module.exports = function (context, req) {
+module.exports = function (context, req, profiles) {
     if (!profiles || profiles.length == 0)
     {
         context.bindings.profileDocument = JSON.stringify({
