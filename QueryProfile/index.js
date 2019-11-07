@@ -1,6 +1,6 @@
 module.exports = function (context, req, profiles) {
     context.log('Searching for profiles...');
-    if (!profiles || profiles == [])
+    if (!profiles || profiles.length == 0)
     {
         context.res = {
             status:404,

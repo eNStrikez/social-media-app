@@ -1,5 +1,5 @@
 module.exports = function (context, req) {
-    if (!profiles || profiles == [])
+    if (!profiles || profiles.length == 0)
     {
         context.bindings.profileDocument = JSON.stringify({
             id: req.body.tag,

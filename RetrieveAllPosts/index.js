@@ -1,6 +1,6 @@
 module.exports = function (context, req, posts) {
     context.log('Searching for posts...');
-    if (!posts || posts == [])
+    if (!posts || posts.length == 0)
     {
         context.res = {
             status:404,

@@ -2,7 +2,7 @@ module.exports = function (context, req) {
     let profiles = context.bindings.profiles;
     
     
-    if (!profiles || profiles == [])
+    if (!profiles || profiles.length == 0)
     {
         context.log('No profile found to edit')
         context.res = {
