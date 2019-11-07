@@ -22,7 +22,7 @@
       "collectionName": "Profiles",
       "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
       "direction": "in",
-      "sqlQuery": "SELECT c.name, c.icon, c.tag from c"
+      "sqlQuery": "SELECT c.name, c.icon, c.id from c"
     }
   ],
   "disabled": false
