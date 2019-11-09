@@ -1,0 +1,29 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "name": "res",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "name": "postDocument",
+      "type": "cosmosDB",
+      "databaseName": "Social",
+      "collectionName": "Posts",
+      "createIfNotExists": true,
+      "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
+      "direction": "out",
+      "partitionKey" : "/timestamp"
+  }
+  ]
+}

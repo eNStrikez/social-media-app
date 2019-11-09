@@ -1,0 +1,39 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "name": "res",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "name": "profileToUpdate",
+      "type": "cosmosDB",
+      "databaseName": "Social",
+      "collectionName": "Profiles",
+      "createIfNotExists": false,
+      "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
+      "direction": "out"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "profile",
+      "databaseName": "Social",
+      "collectionName": "Profiles",
+      "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
+      "partitionKey": "/name",
+      "direction": "in",
+      "Id": "{tag}"
+    }
+  ],
+  "disabled": false
+}

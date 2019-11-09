@@ -1,0 +1,29 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "name": "res",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "posts",
+      "databaseName": "Social",
+      "collectionName": "Posts",
+      "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
+      "direction": "in",
+      "sqlQuery": "SELECT * FROM c where c.tag = {tag} ORDER BY c._ts DESC"
+    }
+  ],
+  "disabled": false
+}
