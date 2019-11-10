@@ -30,7 +30,7 @@
       "databaseName": "Social",
       "collectionName": "Profiles",
       "connectionStringSetting": "nap1g17-cosmos_DOCUMENTDB",
-      "partitionKey": "/name",
+      "createIfNotExists": false,
       "direction": "in",
       "sqlQuery": "SELECT * FROM c WHERE c.id = {tag}"
     }
