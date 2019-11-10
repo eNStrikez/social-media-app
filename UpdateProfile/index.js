@@ -8,6 +8,7 @@ module.exports = function (context, req, profile) {
         }
     } else {
         context.log('Editing found profile');
+        context.bindings.profileToUpdate = [];
         updatedProfile = profile[0];
         updatedProfile.name = req.body.name;
         updatedProfile.icon = req.body.icon;
