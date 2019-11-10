@@ -8,7 +8,7 @@ module.exports = function (context, req) {
         tag: req.body.tag,
         name: req.body.name,
         icon: req.body.icon,
-        timestamp: date.toLocaleDateString(),
+        timestamp: date.toLocaleTimeString(),
         date: day + "/" + month + "/" + year,
         content: req.body.content,
         media: req.body.media,
