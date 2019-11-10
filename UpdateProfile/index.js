@@ -8,10 +8,11 @@ module.exports = function (context, req, profile) {
         }
     } else {
         context.log('Editing found profile');
-        context.bindings.profileToUpdate = profile[0];
-        context.bindings.profileToUpdate.name = req.body.name;
-        context.bindings.profileToUpdate.icon = req.body.icon;
-        context.bindings.profileToUpdate.email = req.body.email;
+        updatedProfile = profile[0];
+        updatedProfile.profileToUpdate.name = req.body.name;
+        updatedProfile.profileToUpdate.icon = req.body.icon;
+        updatedProfile.profileToUpdate.email = req.body.email;
+        context.bindings.profileToUpdate.push(updateProfile);
         context.res = {
             status: 200,
             body: "Updated profile"
