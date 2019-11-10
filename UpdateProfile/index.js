@@ -13,7 +13,7 @@ module.exports = function (context, req, profile) {
         updatedProfile.name = req.body.name;
         updatedProfile.icon = req.body.icon;
         updatedProfile.email = req.body.email;
-        context.bindings.profileToUpdate.push(updateProfile);
+        context.bindings.profileToUpdate.push(updatedProfile);
         context.res = {
             status: 200,
             body: "Updated profile"
