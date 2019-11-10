@@ -2,8 +2,14 @@ module.exports = function (context, req) {
     let date = new Date();
 
     let seconds = date.getSeconds();
+    if(seconds.length == 1)
+        seconds = '0' + seconds;
     let mins = date.getMinutes();
+    if(mins.length == 1)
+        mins = '0' + mins;
     let hours = date.getHours();
+    if(hours.length == 1)
+        hours = '0' + hours;
 
     let day = date.getDate();
     let month = date.getMonth() + 1;
