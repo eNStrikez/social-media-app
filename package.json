@@ -6,7 +6,7 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
-    "bcrypt": "^3.0.6"
+    "bcrypt": "^5.0.0"
   },
   "devDependencies": {}
 }
